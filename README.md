@@ -1,5 +1,7 @@
 # EvolvAI ReadMe
 
+# How to run
+- `rails s`
 
 Things you may want to cover:
 
