@@ -1,22 +1,20 @@
-// Define color variables
-$background-color: #808081
-$text-color: white
-
+// Use varible
+@import "../varible"
 // Base styles
 body
   background-color: $background-color
-  color: $text-color
-  font-family: Arial, sans-serif
+  color: $text-color-white
+  font-family: $main-text-style
   display: flex
   flex-direction: column
   align-items: center
   justify-content: center
-  height: 100vh
-  margin: 0
+  height: $width-100
+  margin: $width-0
 
 // Header styles
 .header
-  font-size: 48px
+  font-size: $font-size-xxl
   margin-bottom: 20px
 
 // Footer styles

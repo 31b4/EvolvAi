@@ -291,6 +291,8 @@ GEM
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
+    sass-rails (6.0.0)
+      sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -411,7 +413,7 @@ DEPENDENCIES
   rails (~> 8.0.1)
   rubocop-rails-omakase
   sass (~> 3.7, >= 3.7.4)
-  sassc-rails
+  sass-rails (~> 6.0)
   selenium-webdriver
   slim (~> 5.2)
   solid_cable

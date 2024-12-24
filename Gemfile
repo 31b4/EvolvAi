@@ -24,7 +24,8 @@ gem 'sass', '~> 3.7', '>= 3.7.4'
 # gem "bcrypt", "~> 3.1.7"
 
 # Sass compiler
-gem 'sassc-rails'
+gem 'sass-rails', '~> 6.0'
+
 
 # NoMethodError fix???
 gem 'sprockets-rails'
