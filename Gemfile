@@ -17,7 +17,7 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 # Html slim
-gem 'slim', '~> 3.0', '>= 3.0.6'
+gem 'slim', '~> 5.2'
 # Sass
 gem 'sass', '~> 3.7', '>= 3.7.4'
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
