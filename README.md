@@ -26,3 +26,8 @@ Things you may want to cover:
 - rails 8.0.1 
 - psql 14.15
 
+
+# Frontend
+
+- html.slim 3.0
+- sass

@@ -18,7 +18,8 @@ gem "stimulus-rails"
 gem "jbuilder"
 # Html slim
 gem 'slim', '~> 3.0', '>= 3.0.6'
-
+# Sass
+gem 'sass', '~> 3.7', '>= 3.7.4'
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
 
