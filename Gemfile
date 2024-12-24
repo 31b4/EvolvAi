@@ -26,6 +26,8 @@ gem 'sass', '~> 3.7', '>= 3.7.4'
 # Sass compiler
 gem 'sass-rails', '~> 6.0'
 
+# Use psql database
+gem 'pg', '~> 1.5', '>= 1.5.6'
 
 # NoMethodError fix???
 gem 'sprockets-rails'
