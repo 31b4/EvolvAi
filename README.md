@@ -26,9 +26,5 @@ Things you may want to cover:
 - rails 8.0.1 
 - psql 14.15
 - html.slim 3.0
-- sass
+- sass 1.83.0 compiled with dart2js 3.6.0
 
-# Auto compile sass to css
-- `./sass-css.sh`
-- if new sass file is created add a new line to `sass-css.sh`, example:
-- `sass --watch app/assets/stylesheets/new.sass:app/assets/stylesheets/new.css`
