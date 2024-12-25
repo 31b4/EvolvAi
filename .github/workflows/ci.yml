@@ -75,6 +75,11 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
+      - name: Install dependencies
+        run: |
+          bundle lock --add-platform x86_64-linux
+          bundle install
+
       - name: Run tests
         env:
           RAILS_ENV: test
