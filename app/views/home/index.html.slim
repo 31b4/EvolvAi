@@ -8,4 +8,7 @@ html lang="en"
   body
     .header 18:42
     .footer
-      input type="text" placeholder="What did you get done this week?"
+      .input-container
+        input type="text" placeholder="What did you get done this week?"
+        button
+          = image_tag 'send_button.png', alt: 'send button'

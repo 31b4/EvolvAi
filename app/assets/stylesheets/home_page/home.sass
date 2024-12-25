@@ -8,20 +8,50 @@ body
   display: flex
   flex-direction: column
   align-items: center
-  justify-content: center
-  height: $width-100
-  margin: $width-0
+  justify-content: space-between
+  height: 100vh
+  margin: 0
 
 // Header styles
 .header
-  font-size: $font-size-xxl
-  margin-bottom: 20px
+  font-size: $font-size-large
+  margin-top: 20px
 
 // Footer styles
 .footer
-  margin-top: 20px
+  margin-bottom: 40px
+  width: 100%
+  display: flex
+  justify-content: center
+  align-items: center
 
-  input
-    padding: 10px
+  .input-container
+    display: flex
+    align-items: center
+    background-color: #e0e0e0
     border-radius: 5px
-    border: none
+    padding: 5px
+    width: 90%
+    max-width: 600px
+
+    input
+      padding: 10px
+      border-radius: 5px 0 0 5px
+      border: none
+      width: 100%
+      outline: none
+      text-align: center
+
+      &::placeholder
+        text-align: center
+
+    button
+      background: none
+      border: none
+      cursor: pointer
+      align-items: center
+      justify-content: center
+      width: 40px
+      height: 40px
+      img
+        width: 30px
