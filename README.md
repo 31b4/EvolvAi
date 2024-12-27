@@ -1,7 +1,12 @@
 # EvolvAI ReadMe
 
-# How to run
-- `rails s`
+# Run app and db with docker
+- `docker-compose up --build`
+- make sure you have `config/master.key`
+
+# Run only db with docker
+- `rails s` - start the webapp
+- 
 
 Things you may want to cover:
 
