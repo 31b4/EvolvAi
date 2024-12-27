@@ -4,13 +4,15 @@ services:
   db:
     image: postgres:latest
     environment:
-      POSTGRES_USER: ben
-      POSTGRES_PASSWORD: ben
-      POSTGRES_DB: testdb1
+      POSTGRES_USER: admin_user
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: EvolvAi
     volumes:
       - db_data:/var/lib/postgresql/data
     networks:
       - app-network
+    ports:
+      - "5432:5432"
 
   web:
     build:
@@ -23,9 +25,9 @@ services:
       - "3000:3000"
     environment:
       RAILS_ENV: development
-      POSTGRES_USER: ben
-      POSTGRES_PASSWORD: ben
-      POSTGRES_HOST: db
+      POSTGRES_USER: admin_user
+      POSTGRES_PASSWORD: admin
+      POSTGRES_HOST: localhost
     depends_on:
       - db
     networks:
