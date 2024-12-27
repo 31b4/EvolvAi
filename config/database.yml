@@ -5,10 +5,11 @@ default: &default
   username: <%= ENV['POSTGRES_USER'] || 'admin_user' %>
   password: <%= ENV['POSTGRES_PASSWORD'] || 'admin' %>
   host: <%= ENV['POSTGRES_HOST'] || 'localhost' %>
+  port: 5432
 
 development:
   <<: *default
-  database: EvolvAi  # Make sure this is the correct database name
+  database: EvolvAi
 
 test:
   <<: *default
@@ -20,3 +21,4 @@ production:
   username: <%= ENV['POSTGRES_USER'] || 'admin_user' %>
   password: <%= ENV['POSTGRES_PASSWORD'] || 'admin' %>
   host: <%= ENV['POSTGRES_HOST'] || 'localhost' %>
+  port: 5432
