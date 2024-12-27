@@ -8,11 +8,11 @@ default: &default
 
 development:
   <<: *default
-  database: your_app_development  # Make sure this is the correct database name
+  database: EvolvAi  # Make sure this is the correct database name
 
 test:
   <<: *default
-  database: your_app_test
+  database: EvolvAi
 
 production:
   <<: *default
