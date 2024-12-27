@@ -1,12 +1,21 @@
 # EvolvAI ReadMe
 
-# Run app and db with docker
+# Run app and db with docker (NOT COMPLETE)
 - `docker-compose up --build`
 - make sure you have `config/master.key`
 
 # Run only db with docker
+- `docker-compose up -d db` - start only the db with compose
 - `rails s` - start the webapp
-- 
+- `bin/rails db:migrate`
+- Troubleshoot: 
+    - `docker-compose down`, `docker volume rm evolvai_db_data` delete the old volume
+    - `bin/rails db:create`
+
+
+# Run without docker
+- `brew services start postgresql@14` start postgre if not running (macOs)
+- `rails s`
 
 Things you may want to cover:
 
