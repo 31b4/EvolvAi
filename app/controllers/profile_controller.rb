@@ -1,17 +1,23 @@
 class ProfileController < ApplicationController
-
   def profile
     @profile = Profile.new
   end
 
   def create
     @profile = Profile.new(profile_params)
-    if @profile.save
-      redirect_to @profile
+    if Profile.exists?(email: @profile.email)
+      flash[:alert] = "This email address is already registered!"
+      render :user
     else
-      puts @profile.errors.full_messages
-      render :profile
+      if @profile.save
+        redirect_to @profile
+      else
+        render :user
+      end
     end
+  end
+  def show
+    @profile = Profile.find(params[:id])
   end
 
   private
