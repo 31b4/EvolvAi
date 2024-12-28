@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title Profile Page
+  body
+    h1 Welcome to the Profile Page
+
+    = form_with model: @profile, url: profiles_path, local: true do |form|
+      .field
+        = form.label :name, "Name"
+        = form.text_field :name
+      .field
+        = form.label :email, "Email"
+        = form.email_field :email
+      .field
+        = form.label :password, "Password"
+        = form.password_field :password
+
+      = form.submit "Submit"
