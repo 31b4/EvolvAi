@@ -6,8 +6,13 @@ html lang="en"
     title Homepage
     = stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload'
   body class="home-page flex flex-col items-center justify-between min-h-screen bg-gray-50"
-    header class="home-page-header text-xl mt-5"
-      | 18:42
+    header class="home-page-header w-full flex justify-between items-center px-5 mt-5"
+      span class="text-xl"
+        | 18:42
+      - if current_user
+        = button_to logout_path, method: :delete, class: "logout-button px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition-colors" do
+          | Logout
+
     footer class="home-page-footer w-full flex justify-center items-center mb-10"
       div class="home-page-input-container flex items-center bg-gray-200 rounded-md p-2 w-full max-w-xl"
         input type="text" class="home-page-input-text flex-grow p-2 rounded-l-md border-none outline-none text-center" placeholder="What did you get done this week?"

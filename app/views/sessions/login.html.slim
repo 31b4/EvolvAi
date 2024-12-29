@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title Login Page
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload'
+  body class="login-page-body"
+    h1 class="login-page-header" Login to EvolvAi
+
+    = form_with(scope: :session, url: login_path, local: true, class: "login-form") do |form|
+      .login-field
+        = form.label :email, "Email", class: "login-label"
+        = form.email_field :email, class: "login-input"
+      .login-field
+        = form.label :password, "Password", class: "login-label"
+        = form.password_field :password, class: "login-input"
+
+      = form.submit "Login", class: "login-form-submit"
+
+    p class="register-link"
+      | Don't have an account? 
+      = link_to "Register here", '/profile' 
