@@ -1,7 +1,8 @@
-// Use variable
+// Import variables
 @import "../varible"
 
-// Base styles
+
+// Base styles for the homepage
 .home-page
   background-color: $background-color
   color: $text-color-white
@@ -12,48 +13,59 @@
   justify-content: space-between
   min-height: 100vh
 
+
 // Header styles
-#home-page-header
+.home-page-header
   font-size: $font-size-large
   margin-top: 20px
 
+
 // Footer styles
-#home-page-footer
+.home-page-footer
   margin-bottom: 40px
   width: 100%
   display: flex
   justify-content: center
   align-items: center
 
-  #home-page-input-container
-    display: flex
-    align-items: center
-    background-color: #e0e0e0
-    border-radius: 5px
-    padding: 8px
+
+// Input container styles
+.home-page-input-container
+  display: flex
+  align-items: center
+  background-color: #e0e0e0
+  border-radius: 5px
+  padding: 8px
+  width: 100%
+  max-width: 600px
+
+
+// Input field styles
+.home-page-input-text
+  padding: 10px
+  border-radius: 5px 0 0 5px
+  border: none
+  width: 100%
+  outline: none
+  text-align: center
+
+  &::placeholder
+    text-align: center
+
+
+
+// Button styles
+.home-page-send-button
+  background: none
+  border: none
+  cursor: pointer
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 40px
+  height: 40px
+
+  img.w-8
     width: 100%
-    max-width: 600px
 
-    #home-page-input-text
-      padding: 10px
-      border-radius: 5px 0 0 5px
-      border: none
-      width: 100%
-      outline: none
-      text-align: center
 
-      &::placeholder
-        text-align: center
-
-    #home-page-send-button
-      background: none
-      border: none
-      cursor: pointer
-      display: flex
-      align-items: center
-      justify-content: center
-      width: 40px
-      height: 40px
-
-      img.w-8
-        width: 100%

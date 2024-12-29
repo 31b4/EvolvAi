@@ -1,58 +1,77 @@
-#profile-page-body
+@import "../varible"
+
+/* Profile page container */
+.profiles-page-body
   background-color: #f9fafb
   display: flex
   flex-direction: column
   justify-content: flex-start
   align-items: center
-  min-height: 100vh
+  min-height: $width-100
   padding: 20px
 
-#profile-page-header
-  margin-top: 0
+
+/* Profile header */
+.profiles-page-header
+  margin-top: $width-0
   text-align: center
   font-size: 2rem
   font-weight: 600
   margin-bottom: 1.5rem
 
 
-#profile-form
-  background-color: #fff  // Fehér háttér
+/* Profile form container */
+.profiles-form
+  background-color: #fff
   padding: 40px
-  border-radius: 8px  // Kerekített sarkok
+  border-radius: 8px
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
-  width: 100%
-  max-width: 500px  // Maximális szélesség
+  width: $width-full
+  max-width: 500px
 
-.field
+
+/* Field styling */
+.profiles-field
   margin-bottom: 20px
 
-label
+
+/* Label styling */
+.profiles-label
   font-size: 14px
   color: #4a5568
   display: block
   margin-bottom: 8px
 
-input
-  width: 100%
+
+/* Input field styling */
+.profiles-input
+  width: $width-full
   padding: 12px
   border: 1px solid #e2e8f0
   border-radius: 4px
   font-size: 14px
 
-input:focus
+
+/* Input field on focus */
+.profiles-input:focus
   outline: none
   border-color: #3182ce
   box-shadow: 0 0 4px rgba(49, 130, 206, 0.6)
 
-#profile-form-submit
-  background-color: #3182ce  // Kék gomb szín
+
+/* Submit button styling */
+.profiles-form-submit
+  background-color: #3182ce
   color: white
   padding: 12px
   font-size: 16px
-  border-radius: 4px
+  border: $width-0
   cursor: pointer
-  width: 100%
+  width: $width-full
   transition: background-color 0.3s ease
 
-#profile-form-submit:hover
+
+/* Submit button hover effect */
+.profiles-form-submit:hover
   background-color: #2b6cb0
+

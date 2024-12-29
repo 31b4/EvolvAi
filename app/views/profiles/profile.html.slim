@@ -3,18 +3,18 @@ html
   head
     title Profile Page
     = stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload'
-  body id="profile-page-body" class="flex flex-col items-center justify-start min-h-screen"
-    h1 id="profile-page-header" class="text-3xl font-semibold mb-6 text-center" Welcome to the Profile Page
+  body class="profiles-page-body"
+    h1 class="profiles-page-header" Welcome to the Profile Page
 
-    = form_with model: @profile, url: profiles_path, local: true, id: "profile-form" do |form|
-      .field
-        = form.label :name, "Name"
-        = form.text_field :name
-      .field
-        = form.label :email, "Email"
-        = form.email_field :email
-      .field
-        = form.label :password, "Password"
-        = form.password_field :password
+    = form_with model: @profile, url: profiles_path, local: true, class: "profiles-form" do |form|
+      .profiles-field
+        = form.label :name, "Name", class: "profiles-label"
+        = form.text_field :name, class: "profiles-input"
+      .profiles-field
+        = form.label :email, "Email", class: "profiles-label"
+        = form.email_field :email, class: "profiles-input"
+      .profiles-field
+        = form.label :password, "Password", class: "profiles-label"
+        = form.password_field :password, class: "profiles-input"
 
-      = form.submit "Submit", id: "profile-form-submit"
+      = form.submit "Submit", class: "profiles-form-submit"
