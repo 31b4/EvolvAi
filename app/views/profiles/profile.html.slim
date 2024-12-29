@@ -2,10 +2,11 @@ doctype html
 html
   head
     title Profile Page
-  body
-    h1 Welcome to the Profile Page
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload'
+  body id="profile-page-body" class="flex flex-col items-center justify-start min-h-screen"
+    h1 id="profile-page-header" class="text-3xl font-semibold mb-6 text-center" Welcome to the Profile Page
 
-    = form_with model: @profile, url: profiles_path, local: true do |form|
+    = form_with model: @profile, url: profiles_path, local: true, id: "profile-form" do |form|
       .field
         = form.label :name, "Name"
         = form.text_field :name
@@ -16,4 +17,4 @@ html
         = form.label :password, "Password"
         = form.password_field :password
 
-      = form.submit "Submit"
+      = form.submit "Submit", id: "profile-form-submit"

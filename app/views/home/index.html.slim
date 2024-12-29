@@ -5,10 +5,11 @@ html lang="en"
     meta name="viewport" content="width=device-width, initial-scale=1.0"
     title Homepage
     = stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload'
-  body
-    .header 18:42
-    .footer
-      .input-container
-        input type="text" placeholder="What did you get done this week?"
-        button
-          = image_tag 'send_button.png', alt: 'send button'
+  body class="home-page flex flex-col items-center justify-between min-h-screen bg-gray-50"
+    header id="home-page-header" class="text-xl mt-5"
+      | 18:42
+    footer id="home-page-footer" class="w-full flex justify-center items-center mb-10"
+      div id="home-page-input-container" class="flex items-center bg-gray-200 rounded-md p-2 w-full max-w-xl"
+        input id="home-page-input-text" type="text" class="flex-grow p-2 rounded-l-md border-none outline-none text-center" placeholder="What did you get done this week?"
+        button id="home-page-send-button" class="w-10 h-10 flex justify-center items-center bg-transparent border-none cursor-pointer"
+          = image_tag 'send_button.png', alt: 'send button', class: 'w-8'
