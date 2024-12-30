@@ -1,4 +1,3 @@
-# app/controllers/access_control/login_controller.rb
 module AccessControl
   class LoginController < ApplicationController
     def login

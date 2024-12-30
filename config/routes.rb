@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   # Correctly define the POST /register route within the access_control namespace
   namespace :access_control do
     post '/register', to: 'register#create'
-    delete '/logout', to: 'login#destroy', as: 'logout'  # Logout route inside access_control namespace
+    post '/login', to: 'login#create'
+    delete '/logout', to: 'login#destroy', as: 'logout'
   end
 
   # Redirect old routes to new ones
