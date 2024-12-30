@@ -8,8 +8,10 @@ Rails.application.routes.draw do
   post '/register', to: 'access_control/register#create'
   delete '/logout', to: 'access_control/login#destroy'
 
+
+  # Bad solution, it should just always forard to /login instead of /access_control/login
   namespace :access_control do
-    # Redirect GET requests to new routes
+    # Redirect old routes to new ones
     get '/login', to: redirect('/login')
     get '/register', to: redirect('/register')
   end
