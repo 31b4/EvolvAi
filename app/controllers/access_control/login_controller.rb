@@ -5,7 +5,7 @@ module AccessControl
     end
 
     def create
-      user = AccessControl::User.find_by(email: params[:email])
+      user = AccessControl::User.find_by('LOWER(email) = ?', params[:email].downcase)
 
       if user && user.authenticate(params[:password])
         session[:user_id] = user.id

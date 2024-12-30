@@ -10,8 +10,7 @@ html lang="en"
       span class="text-xl"
         | 18:42
       - if current_user
-        = button_to access_control_logout_path, method: :delete, class: "logout-button px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition-colors" do
-          | Logout
+        = button_to 'Logout', logout_path, method: :delete, class: "logout-button px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition-colors"
 
     footer class="home-page-footer w-full flex justify-center items-center mb-10"
       div class="home-page-input-container flex items-center bg-gray-200 rounded-md p-2 w-full max-w-xl"
