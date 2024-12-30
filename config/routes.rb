@@ -1,21 +1,14 @@
 Rails.application.routes.draw do
   root 'home#index'
 
-  # Direct routes for convenience
+  # AccessControl controller routes
   get '/login', to: 'access_control/login#login', as: 'login'
-  get '/register', to: 'access_control/register#register', as: 'register'
   post '/login', to: 'access_control/login#create'
+  get '/register', to: 'access_control/register#register', as: 'register'
+  post '/register', to: 'access_control/register#create'
+  delete '/logout', to: 'access_control/login#destroy', as: 'logout'
 
-  # Correctly define the POST /register route within the access_control namespace
-  namespace :access_control do
-    post '/register', to: 'register#create'
-    post '/login', to: 'login#create'
-    delete '/logout', to: 'login#destroy', as: 'logout'
-  end
-
-  # Redirect old routes to new ones
-  namespace :access_control do
-    get '/login', to: redirect('/login')
-    get '/register', to: redirect('/register')
-  end
+  # Redirect old routes
+  get '/access_control/login', to: redirect('/login')
+  get '/access_control/register', to: redirect('/register')
 end

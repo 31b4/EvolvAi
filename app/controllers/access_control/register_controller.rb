@@ -1,15 +1,16 @@
 module AccessControl
   class RegisterController < ApplicationController
     def register
-      @user = User.new
+      @user = AccessControl::User.new
     end
 
     def create
-      @user = User.new(user_params)
+      @user = AccessControl::User.new(user_params)
 
       if @user.save
-        redirect_to access_control_login_path, notice: 'Registration successful! Please login.'
+        redirect_to login_path, notice: 'Registration successful! Please login.'
       else
+        flash.now[:alert] = 'There was a problem with your registration. Please try again.'
         render :register, status: :unprocessable_entity
       end
     end
@@ -17,8 +18,7 @@ module AccessControl
     private
 
     def user_params
-      params.require(:access_control_user).permit(:name, :email, :password)
+      params.require(:user).permit(:name, :email, :password)
     end
-
   end
 end

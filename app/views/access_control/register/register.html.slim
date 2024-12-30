@@ -6,7 +6,7 @@ html
   body class="register-page-body"
     h1 class="register-page-header" Create Account
 
-    = form_with url: access_control_register_path, model: @user, local: true, class: "register-form", data: { turbo: false } do |form|
+    = form_with url: register_path, model: @user, local: true, class: "register-form", data: { turbo: false } do |form|
       .register-field
         = form.label :name, "Name", class: "register-label"
         = form.text_field :name, class: "register-input"
@@ -16,9 +16,12 @@ html
       .register-field
         = form.label :password, "Password", class: "register-label"
         = form.password_field :password, class: "register-input"
+      .register-field
+        = form.label :password_confirmation, "Password Confirmation", class: "register-label"
+        = form.password_field :password_confirmation, class: "register-input"
 
       = form.submit "Register", class: "register-form-submit"
 
     p class="login-link"
       | Already have an account?
-      = link_to "Login here", access_control_login_path
+      = link_to "Login here", login_path
