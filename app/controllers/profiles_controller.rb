@@ -6,8 +6,9 @@ class ProfilesController < ApplicationController
   def create
     @profile = Profile.new(profile_params)
     if @profile.save
-      redirect_to @profile
+      redirect_to profile_path(@profile) # Profile display page
     else
+      # If the save fails, re-render the form
       render :profile
     end
   end

@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   # Profile routes
+  resources :profiles, only: [:new, :create, :show] # Adding resourceful routes for profiles
   get '/profile', to: 'profiles#profile', as: :profile_settings
-  post '/profiles', to: 'profiles#create'
 end
