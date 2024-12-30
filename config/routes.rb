@@ -2,16 +2,14 @@ Rails.application.routes.draw do
   root 'home#index'
 
   # Direct routes for convenience
-  get '/login', to: 'access_control/login#login'
-  get '/register', to: 'access_control/register#register'
+  get '/login', to: 'access_control/login#login', as: 'login'
+  get '/register', to: 'access_control/register#register', as: 'register'
   post '/login', to: 'access_control/login#create'
   post '/register', to: 'access_control/register#create'
-  delete '/logout', to: 'access_control/login#destroy'
+  delete '/logout', to: 'access_control/login#destroy', as: 'logout'
 
-
-  # Bad solution, it should just always forard to /login instead of /access_control/login
+  # Redirect old routes to new ones
   namespace :access_control do
-    # Redirect old routes to new ones
     get '/login', to: redirect('/login')
     get '/register', to: redirect('/register')
   end
