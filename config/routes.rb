@@ -12,9 +12,5 @@ Rails.application.routes.draw do
     # Redirect GET requests to new routes
     get '/login', to: redirect('/login')
     get '/register', to: redirect('/register')
-    
-    # Add POST routes in the namespace too
-    post '/login', to: redirect('/login')
-    post '/register', to: redirect('/register')
   end
 end
