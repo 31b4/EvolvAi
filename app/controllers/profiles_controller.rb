@@ -5,11 +5,11 @@ class ProfilesController < ApplicationController
 
   def create
     @profile = Profile.new(profile_params)
+    
     if @profile.save
-      redirect_to profile_path(@profile) # Profile display page
+      redirect_to login_path, notice: 'Registration successful! Please login.'
     else
-      # If the save fails, re-render the form
-      render :profile
+      render :profile, status: :unprocessable_entity
     end
   end
 
