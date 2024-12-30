@@ -6,7 +6,7 @@ html
   body class="register-page-body"
     h1 class="register-page-header" Create Account
 
-    = form_with url: register_path, model: @user, local: true, class: "register-form", data: { turbo: false } do |form|
+    = form_with scope: :user, url: register_path, local: true, class: "register-form", data: { turbo: false } do |form|
       .register-field
         = form.label :name, "Name", class: "register-label"
         = form.text_field :name, class: "register-input"

@@ -1,11 +1,11 @@
 module AccessControl
   class LoginController < ApplicationController
     def login
-      @user = User.new
+      @user = AccessControl::User.new
     end
 
     def create
-      user = User.find_by(email: params[:email])
+      user = AccessControl::User.find_by(email: params[:email])
 
       if user && user.authenticate(params[:password])
         session[:user_id] = user.id
