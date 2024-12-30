@@ -42,12 +42,13 @@ Things you may want to cover:
 - html.slim 5.2
 - sass 1.83.0 compiled with dart2js 3.6.0
 
-# Database
--add:
+# Test
+- rspec 7.0
+- factory bot 
+- faker
+- database_cleaner
+- rails-controller-testing
 
-pg_dump -U admin_user -h localhost EvolvAi > adatbázis_backup.sql
-
-- pull:
-
-psql -U admin_user -h localhost EvolvAi < adatbázis_backup.sql
+# Run test
+` bundle exec rspec spec`
 
