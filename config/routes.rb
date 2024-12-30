@@ -1,14 +1,20 @@
 Rails.application.routes.draw do
   root 'home#index'
 
-  get "up" => "rails/health#show", as: :rails_health_check
+  # Direct routes for convenience
+  get '/login', to: 'access_control/login#login'
+  get '/register', to: 'access_control/register#register'
+  post '/login', to: 'access_control/login#create'
+  post '/register', to: 'access_control/register#create'
+  delete '/logout', to: 'access_control/login#destroy'
 
-  # Authentication routes
-  get '/login', to: 'sessions#login'
-  post '/login', to: 'sessions#create'
-  delete '/logout', to: 'sessions#destroy'
-
-  # Profile routes
-  resources :profiles, only: [:new, :create, :show] # Adding resourceful routes for profiles
-  get '/profile', to: 'profiles#profile', as: :profile_settings
+  namespace :access_control do
+    # Redirect GET requests to new routes
+    get '/login', to: redirect('/login')
+    get '/register', to: redirect('/register')
+    
+    # Add POST routes in the namespace too
+    post '/login', to: redirect('/login')
+    post '/register', to: redirect('/register')
+  end
 end

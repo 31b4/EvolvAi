@@ -1,11 +1,11 @@
-class SessionsController < ApplicationController
+class AccessControl::LoginController < ApplicationController
   def login
-    @session = Profile.new
+    @user = AccessControl::User.new
   end
 
   def create
-    user = Profile.find_by(email: params[:session][:email])
-    if user && user.authenticate(params[:session][:password])
+    user = AccessControl::User.find_by(email: params[:login][:email])
+    if user && user.authenticate(params[:login][:password])
       session[:user_id] = user.id
       redirect_to root_path, notice: 'Logged in successfully!'
     else
@@ -18,4 +18,4 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     redirect_to root_path, notice: 'Logged out successfully!'
   end
-end 
+end
