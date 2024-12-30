@@ -1,4 +1,3 @@
-# spec/factories/access_control_users.rb
 FactoryBot.define do
   factory :access_control_user, class: 'AccessControl::User' do
     name { 'John Doe' }
