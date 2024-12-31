@@ -1,0 +1,16 @@
+h2 Forgot your password?
+
+= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: "forgot-password-form" }) do |f|
+  = render "devise/error_messages", resource: resource
+
+  .forgot-password-field
+    = f.label :email, class: "forgot-password-label"
+    = f.email_field :email, autofocus: true, autocomplete: "email", class: "forgot-password-input"
+
+  .forgot-password-actions
+    = f.submit "Send me reset password instructions", class: "forgot-password-submit"
+
+  .forgot-password-links
+    = link_to "Sign in", new_session_path(resource_name), class: "forgot-password-signin-link"
+
+= render "devise/links", class: "forgot-password-links"
