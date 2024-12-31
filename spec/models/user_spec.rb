@@ -38,7 +38,6 @@ RSpec.describe User, type: :model do
     expect(user.valid_password?('wrongpassword')).to be_falsey
   end
 
-  # Teszteljük a Devise :rememberable modult
   it 'generates a remember token when remembered' do
     user = FactoryBot.create(:user)
     user.remember_me!

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe HomeController, type: :controller do
-  # A tesztben használni fogjuk a FactoryBot-ot a felhasználó létrehozásához
+
   let(:user) { FactoryBot.create(:user) }
 
   describe 'GET #index' do
