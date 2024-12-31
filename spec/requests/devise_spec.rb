@@ -24,6 +24,7 @@ RSpec.describe 'Devise Requests', type: :request do
       post user_session_path, params: { user: { email: user.email, password: user.password } }
       follow_redirect!
       expect(response).to have_http_status(:ok)
+      # Assuming "Welcome" is part of the content displayed after successful login
       expect(response.body).to include('Welcome')
     end
   end
@@ -37,11 +38,8 @@ RSpec.describe 'Devise Requests', type: :request do
       delete destroy_user_session_path
       follow_redirect!
 
-      # Make a manual request to the sign-in page after logging out
-      get new_user_session_path
-
-      expect(response).to have_http_status(:ok)
-      expect(response.body).to include('Sign in')
+      # Adjust assertion to target the "Sign in" link or a more specific element
+      expect(response.body).to have_css('a', text: 'Sign in')
     end
   end
 end

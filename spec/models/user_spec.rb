@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  # Teszteljük az alapértelmezett Devise validációkat
   it 'is valid with valid attributes' do
     user = FactoryBot.build(:user)
     expect(user).to be_valid
@@ -27,7 +26,7 @@ RSpec.describe User, type: :model do
     expect(user).to_not be_valid
   end
 
-  # Teszteljük a Devise :database_authenticatable modult
+
   it 'authenticates with valid credentials' do
     user = FactoryBot.create(:user)
     expect(user.valid_password?('password')).to be_truthy
