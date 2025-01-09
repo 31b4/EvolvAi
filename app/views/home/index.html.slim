@@ -12,8 +12,27 @@ html lang="en"
       - if current_user
         = button_to 'Logout', destroy_user_session_path, method: :delete, class: "home-page-logout-button px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition-colors"
 
+    main class="home-page-main flex-grow w-full flex justify-center items-center"
+      - if @jobs
+        div class="jobs-list w-full max-w-4xl bg-white shadow-md rounded-lg p-5"
+          h2 class="text-2xl font-semibold mb-4" | Job Results
+          - @jobs.each do |job|
+            div class="job-item p-4 border-b"
+              h3 class="text-xl font-bold"
+                = job['jobTitle']
+              p class="text-gray-600"
+                | Location: #{job['location']}
+              p class="text-gray-800"
+                | Company: #{job['company']['name']}
+              p class="text-gray-500"
+                | Job Description: #{job['jobDescription'].truncate(150)}
+      - else
+        p No jobs found.
+
     footer class="home-page-footer w-full flex justify-center items-center mb-10"
       div class="home-page-input-container flex items-center bg-gray-200 rounded-md p-2 w-full max-w-xl"
-        input type="text" class="home-page-input-text flex-grow p-2 rounded-l-md border-none outline-none text-center" placeholder="What did you get done this week?"
-        button class="home-page-send-button w-10 h-10 flex justify-center items-center bg-transparent border-none cursor-pointer"
-          = image_tag 'send_button.png', alt: 'send button', class: 'w-8'
+        = form_with url: jobs_search_path, method: :get, local: true do |form|
+          = form.text_field :job_title, placeholder: "Search for a job title", class: "home-page-input-text flex-grow p-2 rounded-l-md border-none outline-none text-center"
+          = form.text_field :location, placeholder: "Location", class: "home-page-input-text flex-grow p-2 rounded-l-md border-none outline-none text-center"
+          button class="home-page-send-button w-10 h-10 flex justify-center items-center bg-transparent border-none cursor-pointer"
+            = image_tag 'send_button.png', alt: 'send button', class: 'w-8'
