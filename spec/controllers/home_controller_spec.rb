@@ -1,11 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe HomeController, type: :controller do
-  include Devise::Test::ControllerHelpers
-
   describe 'GET #index' do
     context 'when the user is logged in' do
-      let(:user) { FactoryBot.create(:user) }
+      let(:user) { create(:user) }
 
       before do
         sign_in user
