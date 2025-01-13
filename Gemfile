@@ -63,7 +63,7 @@ group :development, :test do
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false
   # test framework
-  gem 'rspec-rails', '~> 7.0', '>= 7.0.1'
+  gem 'rspec-rails', '~> 7.0'
   # Factory bot
   gem 'factory_bot_rails'
   # Generate random data
@@ -85,5 +85,4 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem 'rails-controller-testing'
-
 end

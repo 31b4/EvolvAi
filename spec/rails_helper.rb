@@ -31,21 +31,22 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = true
 
   # Uncomment below to configure DatabaseCleaner for JavaScript or non-standard cases
-  # config.before(:suite) do
-  #   DatabaseCleaner.clean_with(:truncation)
-  # end
-  #
-  # config.before(:each) do
-  #   DatabaseCleaner.strategy = :transaction
-  # end
-  #
-  # config.before(:each, type: :request) do
-  #   DatabaseCleaner.strategy = :truncation
-  # end
-  #
-  # config.after(:each) do
-  #   DatabaseCleaner.clean
-  # end
+  config.before(:suite) do
+    DatabaseCleaner.clean_with(:truncation)  # Wipe the test database at the start
+  end
+
+  config.before(:each) do
+    DatabaseCleaner.strategy = :transaction  # Default strategy for regular tests
+  end
+
+  config.before(:each, type: :request) do
+    DatabaseCleaner.strategy = :truncation  # Use truncation for request specs
+  end
+
+  config.after(:each) do
+    DatabaseCleaner.clean  # Clean up after each test run
+  end
+
 
   # Automatically infer spec types based on file location
   config.infer_spec_type_from_file_location!
@@ -61,7 +62,7 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 
   # Persist example states between runs for focused re-runs
-  config.example_status_persistence_file_path = "spec/examples.txt"
+  # config.example_status_persistence_file_path = "spec/examples.txt"
 
   # Enable chaining of custom matcher descriptions
   config.expect_with :rspec do |expectations|
