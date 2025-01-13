@@ -14,6 +14,7 @@ html lang="en"
 
     footer class="home-page-footer w-full flex justify-center items-center mb-10"
       div class="home-page-input-container flex items-center bg-gray-200 rounded-md p-2 w-full max-w-xl"
-        input type="text" class="home-page-input-text flex-grow p-2 rounded-l-md border-none outline-none text-center" placeholder="What did you get done this week?"
-        button class="home-page-send-button w-10 h-10 flex justify-center items-center bg-transparent border-none cursor-pointer"
-          = image_tag 'send_button.png', alt: 'send button', class: 'w-8'
+        = form_with url: search_jobs_path, method: :get, local: true, html: { class: "flex w-full" } do |f|
+          = f.text_field :query, class: "home-page-input-text flex-grow p-2 rounded-l-md border-none outline-none text-center", placeholder: "Search for jobs"
+          = f.submit class: "home-page-send-button w-10 h-10 flex justify-center items-center bg-transparent border-none cursor-pointer" do
+            = image_tag 'send_button.png', alt: 'send button', class: 'w-8'

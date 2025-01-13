@@ -1,0 +1,10 @@
+h1 Search Results
+- if @jobs && @jobs['results'].present?
+  ul
+    - @jobs['results'].each do |job|
+      li
+        h2 = job['title']
+        p = job['description']
+        a href=job['redirect_url'] target="_blank" View Job
+- else
+  p No jobs found. Try a different search query.
