@@ -13,8 +13,9 @@ html lang="en"
         = button_to 'Logout', destroy_user_session_path, method: :delete, class: "home-page-logout-button px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition-colors"
 
     footer class="home-page-footer w-full flex justify-center items-center mb-10"
-      div class="home-page-input-container flex items-center bg-gray-200 rounded-md p-2 w-full max-w-xl"
+      .home-page-input-container.flex.items-center.bg-gray-200.rounded-md.p-2.w-full.max-w-xl
         = form_with url: search_jobs_path, method: :get, local: true, html: { class: "flex w-full" } do |f|
-          = f.text_field :query, class: "home-page-input-text flex-grow p-2 rounded-l-md border-none outline-none text-center", placeholder: "Search for jobs"
-          = f.submit class: "home-page-send-button w-10 h-10 flex justify-center items-center bg-transparent border-none cursor-pointer" do
+          .home-page-input-text.flex-grow.p-2.rounded-l-md.border-none.outline-none.text-center
+            = f.text_field :query, placeholder: "Search for jobs"
+          .home-page-send-button.w-10.h-10.flex.justify-center.items-center.bg-transparent.border-none.cursor-pointer
             = image_tag 'send_button.png', alt: 'send button', class: 'w-8'

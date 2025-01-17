@@ -1,6 +1,5 @@
 // Import variables
-@import "../varible"
-
+@import "../variables"
 
 // Base styles for the homepage
 .home-page
@@ -13,12 +12,10 @@
   justify-content: space-between
   min-height: 100vh
 
-
 // Header styles
 .home-page-header
   font-size: $font-size-large
   margin-top: 20px
-
 
 // Footer styles
 .home-page-footer
@@ -27,7 +24,6 @@
   display: flex
   justify-content: center
   align-items: center
-
 
 // Input container styles
 .home-page-input-container
@@ -39,7 +35,6 @@
   width: 100%
   max-width: 600px
 
-
 // Input field styles
 .home-page-input-text
   padding: 10px
@@ -48,10 +43,17 @@
   width: 100%
   outline: none
   text-align: center
+  background-color: #f0f0f0
+  border: 1px solid #ccc
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1)
+  transition: border-color 0.3s ease
 
   &::placeholder
     text-align: center
 
+  &:focus
+    border-color: #007bff
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1), 0 0 0 3px rgba(0, 123, 255, 0.25)
 
 // Button styles
 .home-page-send-button
@@ -66,7 +68,6 @@
 
   img.w-8
     width: 100%
-
 
 .home-page-logout-button
   position: absolute
@@ -83,4 +84,3 @@
 
   &:hover
     background-color: #0056b3
-
