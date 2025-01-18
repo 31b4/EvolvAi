@@ -31,21 +31,21 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = true
 
   # Uncomment below to configure DatabaseCleaner for JavaScript or non-standard cases
-  config.before(:suite) do
-    DatabaseCleaner.clean_with(:truncation)  # Wipe the test database at the start
-  end
-
-  config.before(:each) do
-    DatabaseCleaner.strategy = :transaction  # Default strategy for regular tests
-  end
-
-  config.before(:each, type: :request) do
-    DatabaseCleaner.strategy = :truncation  # Use truncation for request specs
-  end
-
-  config.after(:each) do
-    DatabaseCleaner.clean  # Clean up after each test run
-  end
+  # config.before(:suite) do
+  #   DatabaseCleaner.clean_with(:truncation)  # Wipe the test database at the start
+  # end
+  #
+  # config.before(:each) do
+  #   DatabaseCleaner.strategy = :transaction  # Default strategy for regular tests
+  # end
+  #
+  # config.before(:each, type: :request) do
+  #   DatabaseCleaner.strategy = :truncation  # Use truncation for request specs
+  # end
+  #
+  # config.after(:each) do
+  #   DatabaseCleaner.clean  # Clean up after each test run
+  # end
 
 
   # Automatically infer spec types based on file location

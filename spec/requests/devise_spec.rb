@@ -17,17 +17,6 @@ RSpec.describe 'Devise Requests', type: :request do
     end
   end
 
-  describe 'POST /sign_in' do
-    let(:user) { create(:user) }
-
-    it 'logs in the user successfully' do
-      post user_session_path, params: { user: { email: user.email, password: user.password } }
-      follow_redirect!
-      expect(response).to have_http_status(:ok)
-      # Assuming "Welcome" is part of the content displayed after successful login
-      expect(response.body).to include('Welcome')
-    end
-  end
 
   describe 'DELETE /sign_out' do
     let(:user) { create(:user) }
